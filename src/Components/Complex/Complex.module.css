@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../Fonts/Roboto-Light.ttf');
+}
+@font-face {
+    font-family: 'Roboto-bold';
+    src: url('../../Fonts/Roboto-Bold.ttf');
+}
+.liCategories{
+    font-family: Roboto;
+    list-style-type: none;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.567739px;
+    margin-bottom: 22px;
+}
+.spanCategories:hover {
+    background: linear-gradient(to top, #EBD8CC 50%, transparent 50%);
+}
