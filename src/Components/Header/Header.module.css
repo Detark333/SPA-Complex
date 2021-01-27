@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../../Fonts/Gilroy-ExtraBold.otf');
+}
+.mainDiv{
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    z-index: 10;
+}
+.likStyles{
+    font-family: Gilroy;
+    padding: 0;
+    display: inline-flex;
+    list-style-type: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+.menuItems{
+    margin-right: 50px;
+    text-decoration: none;
+    color: #000;
+}
+.menuItems:active{
+    color: #000;
+}
+.textAroundAges{
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 21px;
+    letter-spacing: 0.290629px;
+    text-transform: uppercase;
+}
