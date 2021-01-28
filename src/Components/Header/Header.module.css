@@ -29,6 +29,11 @@
     text-decoration: none;
     color: #000;
 }
+.rightMenuItems{
+    margin-right: 50px;
+    text-decoration: none;
+    color: #000;
+}
 .menuItems:active{
     color: #000;
 }

@@ -12,7 +12,7 @@ const Header = () => {
         </div>
         <ul className={header.likStyles}>
             {menuItems.map((item, index) => {
-                return <Link className={index + 1 === menuItems.length? null: header.menuItems} key={index} to={item.link}>{item.name}</Link>
+                return <Link className={index + 1 === menuItems.length? header.rightMenuItems: header.menuItems} key={index} to={item.link + '/0'}>{item.name}</Link>
             })}
         </ul>
         <div style={{display: 'inline-flex', marginTop: '55px'}}>

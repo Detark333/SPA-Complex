@@ -1,18 +1,49 @@
-import React from 'react'
+import React, {useState} from 'react'
 import complex from './Complex.module.css'
-const namesCategories = ["Архитектура","Благоустройство", "Безопасность", "Инженерия", "Инфраструктура", "Транспортная доступность"]
+import {NavLink, Route, Switch} from "react-router-dom";
+import Block from "./Block";
+import architecture from './Svg/Architecture.svg'
+import safety from './Svg/Safety.svg'
+import engineering from './Svg/Engineering.svg'
+import transport from './Svg/Transport.svg'
+import landscaping from './Svg/Landscaping.svg'
+import infrastructure from './Svg/Infrastructure.svg'
+import {Animated} from "react-animated-css";
 
+const namesCategories = [
+    {name: 'Архитектура', svg: <img src={architecture} alt="architecture" />, link: 'Architecture', text: 'Оригинальная архитектура жилого комплекса бизнес-класса «Первомайская» формирует современный стиль жизни'},
+    {name: "Благоустройство", svg: <img src={landscaping} alt="landscaping" />, link: 'Landscaping', text: 'Запроектированные большие окна, которые пропускают много солнечного света, наполнят Ваши квартиры теплотой и уютом'},
+    {name: "Безопасность", svg: <img src={safety} alt="safety" />, link: 'Safety', text: 'Современный двор европейского уровня - территория для детей, игр на свежем воздухе и вечерних'},
+    {name: "Инженерия", svg: <img src={engineering} alt="engineering" />, link: 'Engineering', text: 'Оригинальная архитектура жилого комплекса бизнес-класса «Первомайская» формирует современный стиль жизни'},
+    {name: "Инфраструктура", svg: <img src={infrastructure} alt="infrastructure" />, link: 'Infrastructure', text: 'Прекрасный вариант для тех, кто предпочитает жить в спокойном районе среди интеллигенции, но при этом чувствовать ритм мегаполиса'},
+    {name: "Транспортная доступность", svg: <img src={transport} alt="transport" />, link: 'Transport', text: 'Жилой комплекс «Первомайская» расположен в престижном Академическом районе'}]
 const Complex = () => {
-    return <div style={{display: 'inline-flex', width: '100%',height: '100%'}}>
-        <div style={{display: 'flex', flexGrow: '1',flexDirection: 'column',
-            justifyContent: 'center'}}>
-            <ul style={{paddingLeft: 0}}>
-                {namesCategories.map((item)=> {
-                return <li className={complex.liCategories}><span className={complex.spanCategories}>{item}</span></li>})}
+    const [s, st] = useState(false)
+    return <div className={complex.mainDiv}>
+        <div className={complex.linkDiv}>
+            <ul className={complex.ul}>
+                {namesCategories.map((item, index)=> {
+                return <li key={index} className={complex.liCategories}><NavLink className={complex.spanCategories} activeClassName={complex.spanCategoriesActive} to={'/Complex/' + index}>{item.name}</NavLink></li>})}
             </ul>
         </div>
-        <div style={{display: 'flex', flexGrow: '3', background: '#F0F0F0'}}>123</div>
-        <div style={{display: 'flex', flexGrow: '3'}}>123</div>
+        <div className={complex.informationDiv}>
+            <Animated animationIn="fadeInDown" animationOut="zoomOutDown" animationInDuration={800} animationOutDuration={800} isVisible={s}>
+                {/*<Switch>*/}
+                {/*    <Route*/}
+                {/*        path="/Complex/:number"*/}
+                {/*        render={props => <Block textP={namesCategories[props.match.params.number].name} text={namesCategories[props.match.params.number].text} {...props} />}*/}
+                {/*    />*/}
+                {/*</Switch>*/}
+                <div>123123123123123123123123123123</div>
+            </Animated>
+
+        </div>
+        <Switch>
+            <Route
+                path="/Complex/:number"
+                render={props => namesCategories[props.match.params.number].svg}
+            />
+        </Switch>
     </div>
 }
 

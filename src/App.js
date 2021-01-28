@@ -9,6 +9,7 @@ import {
 import app from './App.module.css'
 import Penthouse from "./Components/Penthouse/Penthouse";
 import Complex from "./Components/Complex/Complex";
+import 'animate.css'
 function App(props) {
   return <>
     <Header/>
