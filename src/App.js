@@ -10,13 +10,13 @@ import app from './App.module.css'
 import Penthouse from "./Components/Penthouse/Penthouse";
 import Complex from "./Components/Complex/Complex";
 import 'animate.css'
-function App(props) {
+function App() {
   return <>
     <Header/>
     <main className={app.main}>
       <Switch>
-        <Route history={props.history} path='/Penthouse' component={Penthouse} />
-        <Route history={props.history} path='/Complex' component={Complex} />
+        <Route  path='/Penthouse' component={Penthouse} />
+        <Route path='/Complex' component={Complex} />
         <Redirect from='/' to='/Penthouse'/>
       </Switch>
     </main>

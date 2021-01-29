@@ -27,6 +27,8 @@
 .spanCategories {
     text-decoration: none;
     color: black;
+    position: relative;
+    z-index: 1;
 }
 .spanCategoriesActive {
     font-family: Roboto-bold;
@@ -40,8 +42,18 @@
     background: linear-gradient(to top, #EBD8CC  50%, transparent 50%);
     transition-duration: 0.1s;
 }
-.spanCategories:hover {
+.spanCategories::before{
+    transition-timing-function: linear;
+    transition-duration: .2s;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0;
     background: linear-gradient(to top, #EBD8CC 50%, transparent 50%);
+    z-index: -1;
+}
+.spanCategories:hover::before{
+    width: 100%;
     cursor: pointer;
 }
 .mainDiv{
@@ -86,11 +98,35 @@
     font-weight: normal;
     font-size: 18px;
     line-height: 30px;
-    /* or 167% */
-
     letter-spacing: -0.0220791px;
-
-    /* Base */
-
     color: #262525;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.page{
+    position: absolute;
+    width: 435px;
+}
+.page-enter-active{
+    animation: fadeIn 3s forwards;
+}
+.page-exit-active{
+    animation: fadeOut 3s forwards;
+}
+@keyframes fadeOut {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
