@@ -23,6 +23,7 @@
     margin-bottom: 22px;
     text-decoration: none;
     color: black;
+    height: 16px;
 }
 .spanCategories {
     text-decoration: none;
@@ -44,7 +45,7 @@
 }
 .spanCategories::before{
     transition-timing-function: linear;
-    transition-duration: .2s;
+    transition-duration: .1s;
     content: '';
     position: absolute;
     height: 100%;
@@ -68,7 +69,7 @@
     justify-content: center;
 }
 .informationDiv{;
-    flex-grow: 3;
+    flex-grow: 10;
     background: #F0F0F0;
     display: inline-flex;
     align-items: center;
@@ -80,6 +81,7 @@
 }
 .ul{
     padding-left: 0;
+    width: 230px;
 }
 .textP{
     font-family: Gilroy;
@@ -102,31 +104,39 @@
     color: #262525;
 }
 
-@keyframes fadeIn {
+@keyframes fade-in {
     0%{
         opacity: 0;
         transform: translateY(-200px);
     }
     100%{
+        opacity: 1;
         transform: translateY(0);
-        opacity: 1;
     }
 }
-.page{
+.page {
+
     position: absolute;
-    width: 435px;
+    width: 425px;
 }
-.page-enter-active{
-    animation: fadeIn 3s forwards;
+.pageEnter {
+    opacity: 0;
+    transform: scale(1.1);
+    animation: fade-in .3s forwards;
 }
-.page-exit-active{
-    animation: fadeOut 3s forwards;
+
+.pageEnterActive {
+
 }
-@keyframes fadeOut {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
+
+.pageExit {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility 0s 1s;
+}
+
+.pageExitActive {
+    opacity: 0;
+
+
 }

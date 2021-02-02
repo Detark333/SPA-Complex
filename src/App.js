@@ -15,9 +15,9 @@ function App() {
     <Header/>
     <main className={app.main}>
       <Switch>
-        <Route  path='/Penthouse' component={Penthouse} />
-        <Route path='/Complex' component={Complex} />
-        <Redirect from='/' to='/Penthouse'/>
+        <Route exact path='/Penthouses/0' component={Penthouse} />
+        <Route path='/Complex' component={Complex}/>
+        <Redirect from="/" to="/Penthouses/0" />
       </Switch>
     </main>
   </>

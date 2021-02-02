@@ -17,6 +17,7 @@ const namesCategories = [
     {name: "Инженерия", svg: <img src={engineering} alt="engineering" />, link: 'Engineering', text: 'Оригинальная архитектура жилого комплекса бизнес-класса «Первомайская» формирует современный стиль жизни', path: '/Complex/3'},
     {name: "Инфраструктура", svg: <img src={infrastructure} alt="infrastructure" />, link: 'Infrastructure', text: 'Прекрасный вариант для тех, кто предпочитает жить в спокойном районе среди интеллигенции, но при этом чувствовать ритм мегаполиса', path: '/Complex/4'},
     {name: "Транспортная доступность", svg: <img src={transport} alt="transport" />, link: 'Transport', text: 'Жилой комплекс «Первомайская» расположен в престижном Академическом районе', path: '/Complex/5'}]
+
 const Complex = () => {
     return <div className={complex.mainDiv}>
         <div className={complex.linkDiv}>
@@ -26,20 +27,27 @@ const Complex = () => {
             </ul>
         </div>
         <div className={complex.informationDiv}>
-                <Route
-                path="/Complex/:number"
-                render={props =>
-                    (<CSSTransition
-                            in={props.match != null}
-                            timeout={800}
-                            classNames="page"
+            {namesCategories.map(({path}, index) => (
+                <Route key={path} exact path={path}>
+                    {({match}) => (
+                        <CSSTransition
+                            in={match != null}
+                            timeout={300}
+                            classNames={{
+                                enter: complex.pageEnter,
+                                enterActive: complex.pageEnterActive,
+                                exit: complex.pageExit,
+                                enterExitActive: complex.pageExitActive,
+                            }}
                             unmountOnExit
                         >
-                        <Block textP={namesCategories[props.match.params.number].name} text={namesCategories[props.match.params.number].text} {...props} />
+                            <div className={complex.page}>
+                                <Block textP={namesCategories[index].name} text={namesCategories[index].text} />
+                            </div>
                         </CSSTransition>
-                        )
-                }
-                />
+                    )}
+                </Route>
+            ))}
         </div>
         <Switch>
             <Route
