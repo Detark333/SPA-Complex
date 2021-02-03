@@ -130,26 +130,26 @@
         position: relative;
         z-index: -1;
         top: -840px;
-        width: 758px;
+        width: 759px;
     }
     100%{
         position: relative;
         z-index: 1;
         top: 0;
-        width: 758px;
+        width: 759px;
     }
 }
 @keyframes fade-out-img {
-    100%{
-        position: relative;
-        z-index: 1;
-        top: 0;
-        width: 758px;
-    }
     0%{
         position: relative;
         z-index: -1;
-        top: -840px;
+        bottom: 0;
+        width: 758px;
+    }
+    100%{
+        position: relative;
+        z-index: 1;
+        bottom: 840px;
         width: 758px;
     }
 }
@@ -168,7 +168,7 @@
 }
 .imgEnter {
     position: relative;
-    animation: fade-in-img .5s forwards;
+    animation: fade-in-img .3s forwards;
 }
 .imgExit {
     position: relative;

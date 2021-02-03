@@ -40,7 +40,6 @@ const Complex = () => {
                                 exit: complex.pageExit,
                                 enterExitActive: complex.pageExitActive,
                             }}
-                            onEntered={()=>{indexMassive.current = index; console.log(indexMassive.current)}}
                             unmountOnExit
                         >
                             <div className={complex.page}>
@@ -58,10 +57,11 @@ const Complex = () => {
                             <div className={complex.imgDiv}>
                                 <CSSTransition
                                     in={match != null}
-                                    timeout={500}
+                                    timeout={300}
                                     classNames={{
-                                        enter: complex.imgEnter,
+                                        enterActive: index < indexMassive.current ? complex.imgEnter : complex.imgEnter,
                                     }}
+                                    onEnter={()=>{indexMassive.current = index}}
                                     unmountOnExit
                                 >
                                     {namesCategories[index].svg}
