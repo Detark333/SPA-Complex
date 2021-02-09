@@ -22,24 +22,7 @@ const Header = () => {
                                  onMouseEnter=
                                      {
                                         () => {
-                                            // setPosition(
-                                            //     pervState => {
-                                            //         if(pervState.left < menuSpanWidth[index]){
-                                            //             return {
-                                            //                 left: pervState.left,
-                                            //                 width: menuSpanWidth[index].left - pervState.left + menuSpanWidth[index].width
-                                            //             }
-                                            //         }
-                                            //     }
-                                            // )
                                             if(position.left < menuSpanWidth[index].left){
-                                                // setPosition(menuSpanWidth[index])
-                                                // setPosition(
-                                                //     {
-                                                //         left: position.left,
-                                                //         width: menuSpanWidth[index].left - position.left + menuSpanWidth[index].width
-                                                //     }
-                                                // )
                                                 setPosition(
                                                     {
                                                         left: position.left,

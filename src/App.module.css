@@ -3,3 +3,16 @@
     z-index: 1;
     height: 840px;
 }
+
+.pageEnter {
+    opacity: 0;
+}
+
+.pageEnterActive {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+.pageExit {
+
+}
