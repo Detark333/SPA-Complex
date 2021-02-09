@@ -12,9 +12,9 @@
     padding: 0 25px;
     z-index: 10;
 }
-.likStyles{
+.linkStyles{
     font-family: Gilroy;
-    padding: 0;
+    padding: 0 6.5px;
     display: inline-flex;
     list-style-type: none;
     font-style: normal;
@@ -23,19 +23,25 @@
     line-height: 15px;
     letter-spacing: 0.8px;
     text-transform: uppercase;
+    margin-bottom: 8px;
 }
 .menuItems{
-    margin-right: 50px;
+    margin-right: 56px;
     text-decoration: none;
     color: #000;
 }
 .rightMenuItems{
-    margin-right: 50px;
     text-decoration: none;
     color: #000;
 }
 .menuItems:active{
     color: #000;
+}
+.wayLand{
+    position: relative;
+    background: #D88F5E;
+    height: 4px;
+    transition: all 0.3s ease-out 0s;
 }
 .textAroundAges{
     font-family: Gilroy;

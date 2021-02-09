@@ -50,10 +50,12 @@
     position: absolute;
     height: 100%;
     width: 0;
+    opacity: 0;
     background: linear-gradient(to top, #EBD8CC 50%, transparent 50%);
     z-index: -1;
 }
 .spanCategories:hover::before{
+    opacity: 1;
     width: 100%;
     cursor: pointer;
 }
@@ -76,9 +78,9 @@
     justify-content: center;
 }
 .imgDiv{
-    display: flex;
     width: 757.99px;
     overflow: hidden;
+    height: 839px;
 }
 .ul{
     padding-left: 0;
@@ -115,42 +117,50 @@
         transform: translateY(0);
     }
 }
-@keyframes fade-in-back {
-    0%{
-        opacity: 0;
-        transform: translateY(200px);
+@keyframes fade-in-img {
+    from{
+        position: absolute;
+        clip: rect(auto, auto, 1px, auto);
     }
-    100%{
-        opacity: 1;
-        transform: translateY(0);
+    to{
+        position: absolute;
+        clip: rect(auto, auto, 839px, auto);
     }
 }
-@keyframes fade-in-img {
-    0%{
-        position: relative;
-        z-index: -1;
-        top: -840px;
-        width: 759px;
-    }
-    100%{
-        position: relative;
+@keyframes fade-out-img-prr {
+    from{
+        position: absolute;
+
         z-index: 1;
-        top: 0;
-        width: 759px;
+        /*clip: rect(840px, auto, auto, auto);*/
+    }
+    to{
+        position: absolute;
+
+        z-index: -1;
+        /*clip: rect(0, auto, auto, auto);*/
     }
 }
 @keyframes fade-out-img {
     0%{
         position: relative;
-        z-index: -1;
-        bottom: 0;
-        width: 758px;
+        z-index: -100;
+
     }
     100%{
         position: relative;
         z-index: 1;
-        bottom: 840px;
-        width: 758px;
+
+    }
+}
+@keyframes fade-out-img-back {
+    from{
+        position: absolute;
+        clip: rect(839px, auto, auto, auto);
+    }
+    to{
+        position: absolute;
+        clip: rect(0, auto, auto, auto);
     }
 }
 .page {
@@ -160,24 +170,12 @@
 .pageEnter {
     opacity: 0;
     transform: scale(1.1);
-    animation: fade-in .3s forwards;
+    animation: fade-in .5s forwards;
 }
 .pageEnterBack {
     opacity: 0;
-    animation: fade-in-back .3s forwards;
+    animation: fade-in-back .5s forwards;
 }
-.imgEnter {
-    position: relative;
-    animation: fade-in-img .3s forwards;
-}
-.imgExit {
-    position: relative;
-    animation: fade-out-img .5s forwards;
-}
-.pageEnterActive {
-
-}
-
 .pageExit {
     opacity: 0;
     visibility: hidden;
@@ -186,4 +184,17 @@
 
 .pageExitActive {
     opacity: 0;
+}
+
+.imgEnter {
+    position: absolute;
+    animation: fade-in-img .5s forwards;
+}
+.imgExit {
+    position: absolute;
+    animation: fade-out-img-prr 0s forwards;
+}
+.imgEnterDown {
+    position: absolute;
+    animation: fade-out-img-back .5s forwards;
 }
