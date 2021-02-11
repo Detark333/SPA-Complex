@@ -2,7 +2,6 @@ import React from 'react'
 import Header from "./Components/Header/Header";
 import {
   Route,
-  Switch,
   Redirect,
   withRouter
 } from "react-router-dom"
@@ -20,7 +19,6 @@ function App() {
   return <>
     <Header path={window.location.pathname}/>
     <main className={app.main}>
-      <Switch>
         {routes.map(({ path, Component }) => (
             <Route key={path} path={path}>
               {({ match }) => (
@@ -28,9 +26,9 @@ function App() {
                       in={match != null}
                       timeout={300}
                       classNames={{
-                        enter: app.pageEnter,
-                        enterActive: app.pageEnterActive,
-                        exit: app.pageExit,
+                        enter: app.numberEnter,
+                        enterActive: app.numberExitActive,
+                        exit: app.numberExit,
                       }}
                       unmountOnExit
                   >
@@ -42,7 +40,6 @@ function App() {
         {/*<Route exact path='/Penthouses/0' component={Penthouse} />*/}
         {/*<Route path='/Complex' component={Complex}/>*/}
         <Redirect from="/" to="/Penthouses/0" />
-      </Switch>
     </main>
     <Footer/>
   </>

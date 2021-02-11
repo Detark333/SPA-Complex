@@ -1,8 +1,8 @@
 import React, {useRef, useState} from 'react'
 import header from './Header.module.css'
 import {Link} from "react-router-dom";
-import burger from './burger.svg'
-import block from './block.svg'
+import burger from '../Complex/Svg/burger.svg'
+import block from '../Complex/Svg/block.svg'
 const menuItems = [{name: "О КОМПЛЕКСЕ", link: '/Complex'}, {name: "Особенности", link: '/Penthouses'}, {name: "ПЕНТХАУСЫ", link: '/Penthouses'}, {name: "ВЫБРАТЬ КВАРТИРУ", link: '/Penthouses'}]
 const menuSpanWidth=[{left: 0, width:104}, {left: 148, width: 111} , {left: 301, width:89}, {left: 433, width:138}]
 const Header = (props) => {
@@ -24,7 +24,7 @@ const Header = (props) => {
         )
     return <header className={header.mainDiv}>
         <div style={{display: 'inline-flex', marginTop: '55px'}}>
-            <img src={block} alt="block" style={{marginRight: '25px'}}/>
+            <img src={block} alt="block" style={{position: 'relative', zIndex: '200', marginRight: '25px'}}/>
             <div className={header.textAroundAges}>Первомайская</div>
         </div>
         <div>
