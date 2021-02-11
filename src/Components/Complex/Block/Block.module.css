@@ -1,0 +1,30 @@
+.textP {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 54px;
+    letter-spacing: -0.0255199px;
+    text-transform: uppercase;
+    margin-top: 0;
+    color: #262525;
+}
+
+.textStyle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: -0.0220791px;
+    color: #262525;
+}
+.spanStyle{
+    margin-top: 10px;
+    padding-top: 20px;
+}
+
+.img{
+    position: absolute;
+    margin-left: 5px;
+}

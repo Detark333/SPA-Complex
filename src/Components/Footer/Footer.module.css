@@ -2,24 +2,21 @@
     font-family: 'Gilroy-Light';
     src: url('../../Fonts/Gilroy-Light.otf');
 }
-.main{
+
+.main {
     display: flex;
     padding-left: 60px;
     align-items: center;
     height: 60px;
 }
-.text{
+
+.text {
     font-family: Gilroy-Light;
     font-style: normal;
     font-weight: 300;
     font-size: 13px;
     line-height: 15px;
-    /* identical to box height */
-
     letter-spacing: 0.175729px;
     text-transform: uppercase;
-
-    /* TextDisable */
-
     color: #505050;
 }

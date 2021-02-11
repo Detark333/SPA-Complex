@@ -2,7 +2,8 @@
     font-family: 'Gilroy';
     src: url('../../Fonts/Gilroy-ExtraBold.otf');
 }
-.mainDiv{
+
+.header {
     top: 0;
     left: 0;
     display: flex;
@@ -12,7 +13,25 @@
     padding: 0 25px;
     z-index: 10;
 }
-.linkStyles{
+
+.divBurger {
+    display: inline-flex;
+    margin-top: 55px;
+}
+
+.imgLeft {
+    position: relative;
+    z-index: 200;
+    margin-right: 25px;
+}
+
+.imgRight {
+    position: relative;
+    z-index: 200;
+    margin-left: 25px;
+}
+
+.linkStyles {
     font-family: Gilroy;
     padding: 0 6.5px;
     display: inline-flex;
@@ -25,25 +44,30 @@
     text-transform: uppercase;
     margin-bottom: 8px;
 }
-.menuItems{
+
+.menuItems {
     margin-right: 56px;
     text-decoration: none;
     color: #000;
 }
-.rightMenuItems{
+
+.rightMenuItems {
     text-decoration: none;
     color: #000;
 }
-.menuItems:active{
+
+.menuItems:active {
     color: #000;
 }
-.wayLand{
+
+.wayLand {
     position: relative;
     background: #D88F5E;
     height: 4px;
     transition: all 0.3s ease-out 0s;
 }
-.textAroundAges{
+
+.textAroundAges {
     font-family: Gilroy;
     font-style: normal;
     font-weight: bold;

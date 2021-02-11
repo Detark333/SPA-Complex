@@ -1,32 +1,33 @@
-.main{
+.main {
     padding: 0 60px;
     z-index: 1;
     height: 840px;
 }
 
-@keyframes fade-in-span {
-    0%{
+@keyframes fade-in-slide {
+    0% {
         position: absolute;
         width: 1800px;
         height: 840px;
         opacity: 0;
     }
-    100%{
+    100% {
         position: absolute;
         width: 1800px;
         height: 840px;
         opacity: 1;
     }
 }
-@keyframes fade-out-span {
-    0%{
+
+@keyframes fade-out-slide {
+    0% {
         position: absolute;
         width: 1800px;
         height: 840px;
         opacity: 1;
         z-index: 2;
     }
-    100%{
+    100% {
         position: absolute;
         width: 1800px;
         height: 840px;
@@ -34,21 +35,24 @@
         z-index: 2;
     }
 }
-.numberEnter {
+
+.slideEnter {
     position: absolute;
     width: 1800px;
     height: 840px;
     opacity: 1;
-    animation: fade-in-span .3s forwards;
+    animation: fade-in-slide .3s forwards;
 }
-.numberExit{
+
+.slideExit {
     position: absolute;
     width: 1800px;
     height: 840px;
     opacity: 1;
-    animation: fade-out-span .2s forwards;
+    animation: fade-out-slide .2s forwards;
 }
-.numberExitActive {
+
+.slideExitActive {
     position: absolute;
     width: 1800px;
     height: 840px;
