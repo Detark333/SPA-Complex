@@ -48,6 +48,27 @@ const Complex = () => {
                     }}
                 </Route>
             ))}
+            <span className={complex.spanClass}>
+            {namesCategories.map(({path}, index) => (
+                <Route key={path} exact path={path}>
+                    {({match}) => {
+                        return <CSSTransition
+                            in={match != null}
+                            timeout={300}
+                            classNames={{
+                                enter: complex.numberEnter,
+                                exit: complex.numberExit,
+                                enterExitActive: complex.numberExitActive,
+                            }}
+                            unmountOnExit
+                        >
+                            <span style={{position: 'absolute'}}>{index + 1}</span>
+                        </CSSTransition>
+                    }}
+                </Route>
+
+            ))}
+              <span>  </span>/6</span>
         </div>
         <div className={complex.imgDiv}>
             {namesCategories.map(({path}, index) => (

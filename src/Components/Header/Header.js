@@ -1,16 +1,30 @@
 import React, {useRef, useState} from 'react'
 import header from './Header.module.css'
 import {Link} from "react-router-dom";
+import burger from './burger.svg'
+import block from './block.svg'
 const menuItems = [{name: "О КОМПЛЕКСЕ", link: '/Complex'}, {name: "Особенности", link: '/Penthouses'}, {name: "ПЕНТХАУСЫ", link: '/Penthouses'}, {name: "ВЫБРАТЬ КВАРТИРУ", link: '/Penthouses'}]
 const menuSpanWidth=[{left: 0, width:104}, {left: 148, width: 111} , {left: 301, width:89}, {left: 433, width:138}]
-const Header = () => {
-    const [position , setPosition] = useState({left: 295, width:89})
-    const positionStatic = useRef({left: 295, width:89})
+const Header = (props) => {
+    const [position , setPosition] = useState(() => {
+        if(props.path === '/Penthouses/0' || props.path === '/'){
+            return {left: 301, width:89}
+        } else {
+            return {left: 0, width:104}
+        }
+    })
+    const positionStatic = useRef(
+        () => {
+            if(props.path === '/Penthouses/0'){
+                return {left: 295, width:89}
+            } else {
+                return {left: 0, width:104}
+            }
+            }
+        )
     return <header className={header.mainDiv}>
         <div style={{display: 'inline-flex', marginTop: '55px'}}>
-            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '25px'}}>
-                <rect width="70" height="70" fill="#262525"/>
-            </svg>
+            <img src={block} alt="block" style={{marginRight: '25px'}}/>
             <div className={header.textAroundAges}>Первомайская</div>
         </div>
         <div>
@@ -48,9 +62,7 @@ const Header = () => {
         </div>
         <div style={{display: 'inline-flex', marginTop: '55px'}}>
             <div className={header.textAroundAges}>8 888 888 88 88</div>
-            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginLeft: '25px'}}>
-                <rect width="70" height="70" fill="#262525"/>
-            </svg>
+            <img src={burger} alt="burger" style={{position: 'relative', zIndex: '200', marginLeft: '25px'}}/>
         </div>
     </header>
 }

@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../../Fonts/Gilroy-ExtraBold.otf');
+}
+.main{
+    display: flex;
+    padding-left: 60px;
+    align-items: center;
+    height: 60px;
+}
+.text{
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 15px;
+    /* identical to box height */
+
+    letter-spacing: 0.175729px;
+    text-transform: uppercase;
+
+    /* TextDisable */
+
+    color: #505050;
+}
