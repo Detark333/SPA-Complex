@@ -43,7 +43,8 @@ const Header = (props) => {
             <ul className={header.linkStyles}>
                 {menuItems.map((item, index) => {
                     return <Link className={index + 1 === menuItems.length ? header.rightMenuItems : header.menuItems}
-                                 key={index} to={item.link + '/0'} onClick={() => {
+                                 key={index} to={item.link + '/0'}
+                                 onClick={() => {
                                     positionStatic.current = menuSpanWidth[index]
                                     setPosition(menuSpanWidth[index])
                                  }}

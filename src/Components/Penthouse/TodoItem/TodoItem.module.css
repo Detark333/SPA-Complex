@@ -1,0 +1,17 @@
+.mainDiv{
+    display: inline-flex;
+    justify-content: space-between;
+    height: 40px;
+    width: 270px;
+    align-items: center;
+    margin: 20px;
+    border: 1px solid black;
+    padding: 0 10px;
+}
+input{
+    height: 20px;
+}
+button{
+    height: 20px;
+
+}
